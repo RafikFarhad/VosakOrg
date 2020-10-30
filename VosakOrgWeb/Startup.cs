@@ -38,7 +38,7 @@ namespace VosakOrg
             });
 
             // Repository
-            services.AddScoped(typeof(IRepository<>), typeof(IRepository<>));
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient<IMemberService, MemberService>();
             services.AddTransient<IPostService, PostService>();
 
