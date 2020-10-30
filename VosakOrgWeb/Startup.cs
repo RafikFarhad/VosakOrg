@@ -5,7 +5,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using VosakOrg.Data;
 using VosakOrg.Extensions;
 using VosakOrgRepositoryLayer;
 using VosakOrgServiceLayer;
@@ -33,14 +32,14 @@ namespace VosakOrg
             services.AddApiVersioning(options => options.ReportApiVersions = true);
 
             // MySql
-            services.AddDbContextPool<VosakDBContext>(options =>
+            services.AddDbContextPool<VosakOrgDBContext>(options =>
             {
                 options.UseMySql(Configuration.GetConnectionString("DefaultConnection"));
             });
 
             // Repository
             services.AddScoped(typeof(IRepository<>), typeof(IRepository<>));
-            services.AddTransient<IPostService, MemberService>();
+            services.AddTransient<IMemberService, MemberService>();
             services.AddTransient<IPostService, PostService>();
 
             // Swagger

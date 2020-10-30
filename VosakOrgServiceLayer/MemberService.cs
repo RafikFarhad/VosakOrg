@@ -6,7 +6,7 @@ using VosakOrgRepositoryLayer;
 
 namespace VosakOrgServiceLayer
 {
-    public class MemberService : IPostService
+    public class MemberService : IMemberService
     {
         private readonly IRepository<Member> _memberRepository;
 

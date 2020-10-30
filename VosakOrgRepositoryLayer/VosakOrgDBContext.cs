@@ -1,12 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
+using System;
+using System.IO;
 using VosakOrgDataAccessLayer;
 
 namespace VosakOrgRepositoryLayer
 {
-    public class VosakRepoDBContext : DbContext
+    public class VosakOrgDBContext : DbContext
     {
 
-        public VosakRepoDBContext(DbContextOptions<VosakRepoDBContext> options) : base(options)
+        public VosakOrgDBContext(DbContextOptions<VosakOrgDBContext> options) : base(options)
         {
                
         }

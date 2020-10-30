@@ -9,10 +9,10 @@ namespace VosakOrgRepositoryLayer
 {
     public class Repository<T> : IRepository<T> where T : BaseEntity
     {
-        private readonly VosakRepoDBContext _dbContext;
+        private readonly VosakOrgDBContext _dbContext;
         private readonly DbSet<T> _entities;
 
-        public Repository(VosakRepoDBContext dbContext)
+        public Repository(VosakOrgDBContext dbContext)
         {
             _dbContext = dbContext;
             _entities = _dbContext.Set<T>();

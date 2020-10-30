@@ -3,7 +3,7 @@ using VosakOrgDataAccessLayer;
 
 namespace VosakOrgServiceLayer
 {
-    public interface IPostService
+    public interface IMemberService
     {
         IEnumerable<Member> GetAllMemeber();
 
