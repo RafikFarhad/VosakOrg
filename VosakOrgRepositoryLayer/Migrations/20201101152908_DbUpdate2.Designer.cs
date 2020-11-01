@@ -9,8 +9,8 @@ using VosakOrgRepositoryLayer;
 namespace VosakOrgRepositoryLayer.Migrations
 {
     [DbContext(typeof(VosakOrgDBContext))]
-    [Migration("20201030145934_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20201101152908_DbUpdate2")]
+    partial class DbUpdate2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,6 +36,9 @@ namespace VosakOrgRepositoryLayer.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<DateTime>("JoinedAt")
                         .HasColumnType("datetime(6)");
 
@@ -43,6 +46,9 @@ namespace VosakOrgRepositoryLayer.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
                         .HasMaxLength(50);
+
+                    b.Property<int>("Order")
+                        .HasColumnType("int");
 
                     b.Property<int?>("PostId")
                         .HasColumnType("int");
@@ -70,6 +76,9 @@ namespace VosakOrgRepositoryLayer.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(20) CHARACTER SET utf8mb4")
                         .HasMaxLength(20);
+
+                    b.Property<int>("Order")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime(6)");

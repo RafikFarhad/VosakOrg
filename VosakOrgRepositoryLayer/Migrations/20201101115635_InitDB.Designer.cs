@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VosakOrgRepositoryLayer;
 
 namespace VosakOrgRepositoryLayer.Migrations
 {
     [DbContext(typeof(VosakOrgDBContext))]
-    partial class VosakOrgDBContextModelSnapshot : ModelSnapshot
+    [Migration("20201101115635_InitDB")]
+    partial class InitDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,9 +36,6 @@ namespace VosakOrgRepositoryLayer.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<DateTime>("DateOfBirth")
-                        .HasColumnType("datetime(6)");
-
                     b.Property<DateTime>("JoinedAt")
                         .HasColumnType("datetime(6)");
 
@@ -44,9 +43,6 @@ namespace VosakOrgRepositoryLayer.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
                         .HasMaxLength(50);
-
-                    b.Property<int>("Order")
-                        .HasColumnType("int");
 
                     b.Property<int?>("PostId")
                         .HasColumnType("int");

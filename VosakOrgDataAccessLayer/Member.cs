@@ -16,14 +16,19 @@ namespace VosakOrgDataAccessLayer
 
         public string Name { get; set; }
 
-        public virtual Post Post { get; set; }
-
         public BloodGroup BloodGroup { get; set; }
+
+        public int Order { get; set; } = 0;
 
         [AllowNull]
         public string Address { get; set; }
 
         [AllowNull]
         public DateTime JoinedAt { get; set; }
+
+        [AllowNull]
+        public DateTime DateOfBirth{ get; set; }
+
+        public virtual Post Post { get; set; }
     }
 }

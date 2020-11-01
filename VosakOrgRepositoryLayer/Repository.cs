@@ -27,5 +27,15 @@ namespace VosakOrgRepositoryLayer
         {
             return _entities.SingleOrDefault(p => p.Id == id);
         }
+
+        public void AddRange(List<T> elementes)
+        {
+            _entities.AddRange(elementes);
+        }
+
+        public void Add(T element)
+        {
+            _entities.Add(element);
+        }
     }
 }

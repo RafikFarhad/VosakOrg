@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using VosakOrg.Extensions;
 using VosakOrgRepositoryLayer;
+using VosakOrgRepositoryLayer.Seeder;
 using VosakOrgServiceLayer;
 
 namespace VosakOrg
@@ -74,6 +75,13 @@ namespace VosakOrg
                 });
 
                 app.UseDeveloperExceptionPage();
+            }
+
+            if (Configuration.GetValue<bool>("DbSeed"))
+            {
+                using var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope();
+                using var context = serviceScope.ServiceProvider.GetService<VosakOrgDBContext>();
+                new TestSeeder(context);
             }
 
             app.UseRouting();
