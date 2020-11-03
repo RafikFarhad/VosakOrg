@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.AspNetCore.Mvc.Routing;
 
-namespace VosakOrg.Extensions
+namespace VosakOrgWeb.Extensions
 {
     public static class ControllerOptionsExtension
     {

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace VosakOrg.Controllers.V1
+namespace VosakOrgWeb.Controllers.Api.V1
 {
     [ApiVersion("1")]
     [Produces("application/json")]

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace VosakOrg.Controllers
+namespace VosakOrgWeb.Controllers
 {
     [Route("/")]
     public class WelcomeController : ControllerBase

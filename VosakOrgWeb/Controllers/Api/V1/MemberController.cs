@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using VosakOrgServiceLayer;
 
-namespace VosakOrg.Controllers.Api.V1
+namespace VosakOrgWeb.Controllers.Api.V1
 {
     [ApiVersion("1")]
     [Produces("application/json")]
@@ -10,18 +10,18 @@ namespace VosakOrg.Controllers.Api.V1
     [ApiController]
     public class MemberController : ControllerBase
     {
-        private IMemberService _memmberService;
+        private readonly IMemberService _memberService;
 
-        public MemberController(IMemberService memberService )
+        public MemberController(IMemberService memberService)
         {
-            _memmberService = memberService;
+            _memberService = memberService;
         }
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult Login()
         {
-            return Ok(_memmberService.GetAllMemeber());
+            return Ok(_memberService.GetAllMemeber());
         }
     }
 }
